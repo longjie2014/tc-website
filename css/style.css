@@ -17,7 +17,7 @@ body {
     padding: 0 24px;
 }
 
-/* 导航栏 */
+/* 导航栏 - 重写 */
 .navbar {
     position: fixed;
     top: 0;
@@ -33,6 +33,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 64px;
+    position: relative;
 }
 
 .logo {
@@ -49,6 +50,7 @@ body {
     font-size: 24px;
 }
 
+/* 桌面端菜单 */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -67,20 +69,24 @@ body {
     color: #1890ff;
 }
 
-/* 移动端菜单按钮 */
+/* 移动端菜单按钮 - 默认隐藏 */
 .nav-toggle {
     display: none;
-    background: none;
+    background: transparent;
     border: none;
     font-size: 24px;
     color: #262626;
     cursor: pointer;
     padding: 8px;
+    z-index: 1001;
 }
 
-@media (max-width: 768px) {
+/* 移动端样式 - 使用 !important 确保生效 */
+@media screen and (max-width: 768px) {
     .nav-toggle {
-        display: block;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .nav-menu {
@@ -89,19 +95,22 @@ body {
         top: 64px;
         left: 0;
         right: 0;
-        background: white;
+        background: #fff;
         flex-direction: column;
         padding: 16px 24px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         gap: 0;
+        list-style: none;
+        margin: 0;
     }
     
     .nav-menu.active {
-        display: flex;
+        display: flex !important;
     }
     
     .nav-menu li {
         border-bottom: 1px solid #f0f0f0;
+        margin: 0;
     }
     
     .nav-menu li:last-child {
@@ -111,6 +120,8 @@ body {
     .nav-menu a {
         display: block;
         padding: 12px 0;
+        color: #262626;
+        text-decoration: none;
     }
 }
 
@@ -179,172 +190,6 @@ body {
     color: #1890ff;
 }
 
-/* 区域 */
-.section {
-    padding: 80px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 48px;
-}
-
-.section-header h2 {
-    font-size: 36px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #262626;
-}
-
-.section-header p {
-    font-size: 16px;
-    color: #8c8c8c;
-}
-
-/* 页面头部 */
-.page-header {
-    padding: 160px 0 80px;
-    background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
-    color: white;
-    text-align: center;
-}
-
-.page-header h1 {
-    font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-
-/* 关于卡片 */
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.about-card {
-    text-align: center;
-    padding: 32px 24px;
-    background: #f5f5f5;
-    border-radius: 8px;
-}
-
-.about-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 16px;
-    background: #1890ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 28px;
-}
-
-.about-card h3 {
-    font-size: 32px;
-    color: #1890ff;
-    margin-bottom: 8px;
-}
-
-/* 解决方案 */
-.solutions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.solution-card {
-    padding: 32px;
-    background: white;
-    border: 1px solid #e8e8e8;
-    border-radius: 8px;
-    transition: all 0.3s;
-}
-
-.solution-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    transform: translateY(-4px);
-}
-
-.solution-icon {
-    width: 56px;
-    height: 56px;
-    background: #1890ff;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    margin-bottom: 16px;
-}
-
-.solution-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.solution-card p {
-    color: #8c8c8c;
-    margin-bottom: 16px;
-}
-
-.link-arrow {
-    color: #1890ff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-/* 合作伙伴 */
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 24px;
-    align-items: center;
-}
-
-.partner-logo {
-    height: 80px;
-    background: #f5f5f5;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 500;
-    color: #8c8c8c;
-    transition: all 0.3s;
-}
-
-.partner-logo:hover {
-    background: #1890ff;
-    color: white;
-}
-
-/* CTA 区域 */
-.cta-section {
-    padding: 80px 0;
-    background: #f5f5f5;
-    text-align: center;
-}
-
-.cta-section h2 {
-    font-size: 32px;
-    margin-bottom: 16px;
-}
-
-.cta-section p {
-    color: #8c8c8c;
-    margin-bottom: 24px;
-}
-
-.btn-large {
-    padding: 16px 48px;
-    font-size: 18px;
-}
-
 /* Footer */
 .footer {
     background: #262626;
@@ -357,11 +202,6 @@ body {
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 48px;
     margin-bottom: 48px;
-}
-
-.footer-brand .logo {
-    color: white;
-    margin-bottom: 16px;
 }
 
 .footer-links h4 {
@@ -387,11 +227,6 @@ body {
     color: white;
 }
 
-.footer-contact p {
-    margin-bottom: 8px;
-    color: #bfbfbf;
-}
-
 .footer-bottom {
     text-align: center;
     padding-top: 24px;
@@ -399,225 +234,8 @@ body {
     color: #8c8c8c;
 }
 
-/* 联系页面 */
-.contact-section {
-    padding: 80px 0;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 48px;
-}
-
-.contact-form-wrapper h2 {
-    margin-bottom: 24px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    font-size: 15px;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #1890ff;
-}
-
-.btn-block {
-    width: 100%;
-    justify-content: center;
-}
-
-.contact-info h2 {
-    margin-bottom: 24px;
-}
-
-.info-item {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 24px;
-}
-
-.info-item i {
-    width: 40px;
-    height: 40px;
-    background: #f5f5f5;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1890ff;
-    font-size: 18px;
-}
-
-.info-item h4 {
-    margin-bottom: 4px;
-}
-
-.info-item p {
-    color: #8c8c8c;
-}
-
-.social-links {
-    display: flex;
-    gap: 12px;
-    margin-top: 24px;
-}
-
-.social-link {
-    width: 40px;
-    height: 40px;
-    background: #f5f5f5;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #595959;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.social-link:hover {
-    background: #1890ff;
-    color: white;
-}
-
-/* 解决方案详情页 */
-.solutions-detail {
-    display: grid;
-    gap: 32px;
-}
-
-.solution-item {
-    padding: 32px;
-    background: #f5f5f5;
-    border-radius: 8px;
-}
-
-.solution-item h3 {
-    font-size: 24px;
-    margin-bottom: 12px;
-    color: #1890ff;
-}
-
-.solution-item h3 i {
-    margin-right: 12px;
-}
-
-/* 合作伙伴卡片 */
-.partners-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.partner-card {
-    padding: 32px;
-    background: #f5f5f5;
-    border-radius: 8px;
-    transition: all 0.3s;
-}
-
-.partner-card:hover {
-    background: #e6f7ff;
-}
-
-.partner-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-    color: #1890ff;
-}
-
-/* 响应式 */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-    }
-    
-    .hero-title {
-        font-size: 32px;
-    }
-    
-    .about-grid,
-    .solutions-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .partners-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    
+@media screen and (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;
     }
 }
-
-/* 移动端菜单按钮 */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #262626;
-    cursor: pointer;
-    padding: 8px;
-}
-
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-    }
-    
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 16px 24px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        gap: 0;
-    }
-    
-    .nav-menu.active {
-        display: flex;
-    }
-    
-    .nav-menu li {
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    .nav-menu li:last-child {
-        border-bottom: none;
-    }
-    
-    .nav-menu a {
-        display: block;
-        padding: 12px 0;
-    }
-}
-
-/* Version: 20250228-2043 */
