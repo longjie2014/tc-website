@@ -1,15 +1,186 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>企业介绍 - 腾创互联软件</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 关于页面专用样式 */
+        .about-hero {
+            background: linear-gradient(135deg, #1890ff 0%, #722ed1 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .about-hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .stats-bar {
+            background: #f8f9fa;
+            padding: 40px 0;
+            margin-bottom: 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 36px;
+            color: #1890ff;
+            margin-bottom: 8px;
+        }
+        
+        .stat-item p {
+            color: #595959;
+        }
+        
+        .about-intro {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .intro-content h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #262626;
+        }
+        
+        .intro-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #595959;
+            margin-bottom: 16px;
+        }
+        
+        .ai-solutions {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .ai-solutions h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+        
+        .ai-card {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .ai-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .ai-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1890ff, #722ed1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .ai-card h3 {
+            font-size: 20px;
+            color: #262626;
+        }
+        
+        .ai-card p {
+            color: #595959;
+            line-height: 1.6;
+        }
+        
+        .awards {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .awards h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .award-item {
+            text-align: center;
+            padding: 24px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .award-item i {
+            font-size: 32px;
+            color: #1890ff;
+            margin-bottom: 12px;
+        }
+        
+        .award-item h4 {
+            font-size: 14px;
+            color: #262626;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid,
+            .ai-grid,
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="index.html" class="logo"><i class="fas fa-rocket"></i><span>腾创互联软件</span></a>
+            <a href="index.html" class="logo">
+                <i class="fas fa-rocket"></i>
+                <span>腾创互联软件</span>
+            </a>
             <ul class="nav-menu">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="about.html" class="active">企业介绍</a></li>
@@ -20,58 +191,113 @@
         </div>
     </nav>
 
-    <section class="page-header">
+    <!-- Hero 区域 -->
+    <section class="about-hero">
         <div class="container">
-            <h1>企业介绍</h1>
-            <p>AI智能解决方案引领者</p>
+            <h1>腾创互联软件</h1>
+            <p>AI智能解决方案引领者 · 让科技赋能企业未来</p>
         </div>
     </section>
 
-    <section class="section">
+    <!-- 数据展示 -->
+    <section class="stats-bar">
         <div class="container">
-            <div class="about-content">
-                <h2>关于腾创互联软件</h2>
-                <p><strong>腾创互联软件</strong>是国内领先的<strong>AI智能解决方案提供商</strong>，专注于企业数字化转型与人工智能应用落地。公司成立于2016年，总部位于北京，在上海、深圳、杭州设有研发中心。</p>
-                
-                <h3>核心优势</h3>
-                <ul>
-                    <li><strong>AI技术领先</strong>：拥有自主研发的AI算法平台，覆盖自然语言处理、计算机视觉、智能推荐等核心领域</li>
-                    <li><strong>行业经验丰富</strong>：服务超过500+企业客户，涵盖金融、制造、零售、医疗等多个行业</li>
-                    <li><strong>研发团队强大</strong>：核心团队来自清华、北大及BAT等顶尖企业和高校</li>
-                    <li><strong>技术专利</strong>：拥有50+项AI相关技术专利和软件著作权</li>
-                </ul>
-
-                <h3>AI解决方案</h3>
-                <div class="solutions-detail">
-                    <div class="solution-item">
-                        <h4><i class="fas fa-brain"></i> 智能客服系统</h4>
-                        <p>基于大语言模型的智能客服解决方案，支持7×24小时在线服务，自动解答率超过90%，大幅降低企业客服成本。</p>
-                    </div>
-                    <div class="solution-item">
-                        <h4><i class="fas fa-chart-line"></i> 智能数据分析</h4>
-                        <p>利用机器学习算法对企业数据进行深度挖掘，提供精准的业务预测和决策支持，帮助企业实现数据驱动增长。</p>
-                    </div>
-                    <div class="solution-item">
-                        <h4><i class="fas fa-robot"></i> 流程自动化(RPA)</h4>
-                        <p>AI驱动的流程自动化解决方案，可自动处理重复性业务任务，提升工作效率300%以上。</p>
-                    </div>
-                    <div class="solution-item">
-                        <h4><i class="fas fa-image"></i> 计算机视觉</h4>
-                        <p>提供图像识别、人脸识别、OCR文字识别等视觉AI能力，广泛应用于质检、安防、文档处理等场景。</p>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>服务企业</p>
                 </div>
-
-                <h3>企业荣誉</h3>
-                <ul>
-                    <li>国家高新技术企业认证</li>
-                    <li>中关村高成长企业TOP100</li>
-                    <li>AI创新应用大赛金奖</li>
-                    <li>与阿里巴巴、腾讯、华为建立战略合作</li>
-                </ul>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>技术专利</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>客户满意度</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8年</h3>
+                    <p>行业深耕</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- 企业简介 -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2>关于我们</h2>
+                <p><strong>腾创互联软件</strong>成立于2016年，总部位于北京，是国内领先的<strong>AI智能解决方案提供商</strong>。我们致力于将前沿人工智能技术转化为企业生产力，帮助客户实现数字化转型与智能化升级。</p>
+                <p>公司核心团队来自清华大学、北京大学及阿里巴巴、腾讯、百度等顶尖科技企业和高校，在人工智能、大数据、云计算等领域拥有深厚的技术积累和丰富的行业经验。</p>
+                <p>历经8年发展，我们已服务超过500家企业客户，业务涵盖金融、制造、零售、医疗、教育等多个行业领域，并荣获国家高新技术企业、中关村高成长企业TOP100等多项荣誉资质。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI解决方案 -->
+    <section class="ai-solutions">
+        <div class="container">
+            <h2>核心AI解决方案</h2>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <div class="ai-icon"><i class="fas fa-comments"></i></div>
+                        <h3>智能客服系统</h3>
+                    </div>
+                    <p>基于大语言模型的智能客服解决方案，支持7×24小时在线服务，自动解答率超过90%，大幅降低企业客服成本，提升客户满意度。</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <div class="ai-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>智能数据分析</h3>
+                    </div>
+                    <p>利用机器学习算法对企业数据进行深度挖掘，提供精准的业务预测和决策支持，帮助企业实现数据驱动增长，发现商业价值。</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <div class="ai-icon"><i class="fas fa-robot"></i></div>
+                        <h3>流程自动化 RPA</h3>
+                    </div>
+                    <p>AI驱动的流程自动化解决方案，可自动处理重复性业务任务，提升工作效率300%以上，释放人力资源聚焦高价值工作。</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <div class="ai-icon"><i class="fas fa-eye"></i></div>
+                        <h3>计算机视觉</h3>
+                    </div>
+                    <p>提供图像识别、人脸识别、OCR文字识别等视觉AI能力，广泛应用于质检、安防、文档处理等场景，实现智能化视觉检测。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 荣誉资质 -->
+    <section class="awards">
+        <div class="container">
+            <h2>企业荣誉</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>国家高新技术企业</h4>
+                </div>
+                <div class="award-item">
+                    <i class="fas fa-trophy"></i>
+                    <h4>中关村高成长企业TOP100</h4>
+                </div>
+                <div class="award-item">
+                    <i class="fas fa-award"></i>
+                    <h4>AI创新应用大赛金奖</h4>
+                </div>
+                <div class="award-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>阿里云战略合作伙伴</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 腾创互联软件. All rights reserved.</p>
